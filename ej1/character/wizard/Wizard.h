@@ -1,4 +1,5 @@
-#include "Character.h"
+#pragma once
+#include "../Character.h"
 
 class Wizard: public Character{
 protected:
@@ -19,6 +20,8 @@ public:
     void deletePrincipalWeapon()override; 
     void addSecundaryWeapon(shared_ptr<Weapons> weapon)override; 
     void deleteSecundaryWeapon()override; 
+    void takeDamage(float damage)override; 
+    void normalAttack(shared_ptr<Character> enemy,int weapon) override; 
 
 };
 

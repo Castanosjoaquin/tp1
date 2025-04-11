@@ -57,3 +57,16 @@ void Wizard::deletePrincipalWeapon(){
 void Wizard::deleteSecundaryWeapon(){ 
     weapons.second = nullptr; 
 } 
+
+void Wizard::takeDamage(float damage){ 
+    hp-=damage-defense; 
+    if(hp<0){ 
+        cout<<name<< " died"<<endl; 
+    }
+
+}
+
+void Wizard::normalAttack(shared_ptr<Character> enemy,int weapon){ 
+    if(weapon< 0 || weapon>2 || enemy ==nullptr) throw invalid_argument("invalid argument");
+    enemy->takeDamage(getStrength(weapon)); 
+}

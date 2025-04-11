@@ -5,7 +5,6 @@ Amulet::Amulet(float damage, float level, string name, float mana,float protecti
         if(protectionPower<=0)throw invalid_argument("The protectionPower argument must be postive");
     }
 
-Amulet::~Amulet(){}
 
 void Amulet::magicProtection(float injury ) { 
     if (injury > getDamage()) {

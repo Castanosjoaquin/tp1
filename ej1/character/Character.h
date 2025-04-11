@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "../weapons/Weapons.h"
 #include <memory>
@@ -18,5 +19,6 @@ public:
     virtual void addSecundaryWeapon(shared_ptr<Weapons> weapon)=0; 
     virtual void deleteSecundaryWeapon()=0 ;
     virtual void takeDamage(float damage)=0;
+    virtual void normalAttack(shared_ptr<Character> enemy, int weapon)=0;
 };
 

@@ -8,8 +8,7 @@ private:
     float protectionPower; 
 public:
     Amulet(float damage, float level, string name, float mana,float protectionPower);
-    ~Amulet();
-    float normalAttack()override; 
+    ~Amulet()= default;
     void magicProtection(float damage);
 
 };

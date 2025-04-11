@@ -67,3 +67,8 @@ void Warrior::takeDamage(float damage){
     }
 
 }
+
+void Warrior::normalAttack(shared_ptr<Character> enemy,int weapon){ 
+    if(weapon< 0 || weapon>2 || enemy ==nullptr) throw invalid_argument("invalid argument");
+    enemy->takeDamage(getStrength(weapon)); 
+}

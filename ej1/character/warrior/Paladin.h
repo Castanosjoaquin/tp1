@@ -1,3 +1,4 @@
+#pragma once
 #include "Warrior.h"
 
 class Paladin : public Warrior{
