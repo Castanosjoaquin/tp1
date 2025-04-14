@@ -1,3 +1,4 @@
+#pragma once
 #include "PersonajeFactory.h"
 #include <time.h>
 #include <cstdlib>

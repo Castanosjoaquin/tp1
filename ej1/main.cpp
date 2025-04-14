@@ -29,5 +29,6 @@
 #include "character/warrior/Barbarian.h" 
 
 int main(){ 
+    //hacer un main proban todas las clases
 
 }

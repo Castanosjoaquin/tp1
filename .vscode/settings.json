@@ -3,7 +3,8 @@
         "typeinfo": "cpp",
         "ostream": "cpp",
         "string": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "random": "cpp"
     },
     "github.copilot.enable": {
         "*": true,

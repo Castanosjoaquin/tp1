@@ -1,3 +1,4 @@
+#pragma once
 #include "../ej2/PersonajeFactory.h"
 #include "../ej2/func2.h"
 

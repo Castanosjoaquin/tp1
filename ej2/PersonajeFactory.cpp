@@ -4,24 +4,24 @@ shared_ptr<Character> PersonajeFactory::creeatCharacter(character type){
 
     switch (type){
         case character::paladin:
-            return make_shared<Paladin>("Paladin", 1000.0, 100.0,50.0,50.0);
+            return make_shared<Paladin>("Paladin", 100.0, 100.0,50.0,50.0);
         case character::mercenary: 
-            return make_shared<Mercenary>("Mercernary", 500.0, 100.0,20.0,0.5);
+            return make_shared<Mercenary>("Mercernary", 100.0, 100.0,20.0,0.5);
         case character::knight:
-            return  make_shared<Knight>("Knight", 1200.0,80.0,70.0);
+            return  make_shared<Knight>("Knight", 100.0,80.0,70.0);
         case character::gladiator:
-            return make_shared<Gladiator>("Gladiator", 800.0, 90.0, 60.0);
+            return make_shared<Gladiator>("Gladiator", 100.0, 90.0, 60.0);
         case character::barbarian:
-            return make_shared<Barbarian>("Barbarian", 700.0, 110.0, 40.0);
+            return make_shared<Barbarian>("Barbarian", 100.0, 110.0, 40.0);
         case character::conjurer:
-            return make_shared<Conjurer>("Conjurer", 600.0, 80.0, 30.0);
+            return make_shared<Conjurer>("Conjurer", 100.0, 80.0, 30.0);
            
         case character::necromancer: 
-            return make_shared<Necromancer>("Necromancer", 500.0, 70.0, 20.0, 0.4);
+            return make_shared<Necromancer>("Necromancer", 100.0, 70.0, 20.0, 40.0);
         case character::sorcerer:
-            return make_shared<Sorcerer>("Sorcerer", 550.0, 90.0, 25.0, 4.0);
+            return make_shared<Sorcerer>("Sorcerer", 100.0, 90.0, 25.0, 40.0);
         case character::witcher:
-            return make_shared<Witcher>("Witcher", 700.0, 100.0, 30.0);
+            return make_shared<Witcher>("Witcher", 100.0, 100.0, 30.0,50.0);
         
         default:
             throw invalid_argument("Invalid character type");
@@ -31,38 +31,40 @@ shared_ptr<Character> PersonajeFactory::creeatCharacter(character type){
 }
 
 shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){ 
-    switch (weapon){    
-    case weapons::club:
-        return make_shared<Club>("Club", 20.0, 0.5);
-     
-    case weapons::doubleAxe:
-        return make_shared<DoubleAxe>("DoubleAxe", 30.0, 0.7);
+    while(true){    
+        switch (weapon){    
+        case weapons::club:
+            return make_shared<Club>(100.0,5.0,0.7,"Club",30.0); 
 
-    case weapons::simpleAxe:
-        return make_shared<SimpleAxe>("SimpleAxe", 25.0, 0.6);
-      
-    case weapons::spear:
-        return make_shared<Spear>("Spear", 15.0, 0.4);               
+        case weapons::doubleAxe:
+            return make_shared<DoubleAxe>(100.0,5.0,0.7,"DoubleAxe");
 
-    case weapons::sword:
-       return make_shared<Sword>("Sword", 35.0, 0.8);
-   
-    case weapons::magicStaff:
-        return make_shared<MagicStaff>("MagicStaff", 50.0, 0.9);
+        case weapons::simpleAxe:
+            return make_shared<SimpleAxe>(150.0,5.0,0.7,"SimpleAxe", 25.0);
+        
+        case weapons::spear:
+            return make_shared<Spear>(30.0,5.0,0.7,"Spear", 15.0);               
+
+        case weapons::sword:
+        return make_shared<Sword>(80.0,5.0,0.7,"Sword");
     
-    case weapons::magicBook:
-        return make_shared<MagicBook>("MagicBook", 40.0, 0.8);
-   
-    case weapons::amulet:
-        return make_shared<Amulet>("Amulet", 30.0, 0.6);
+        case weapons::magicStaff:
+            return make_shared<MagicStaff>(100.0,5.0,"MagicStaff", 50.0,500.0);
+        
+        case weapons::magicBook:
+            return make_shared<MagicBook>(50.0,5.0,"MagicBook", 40.0, 80.0);
+    
+        case weapons::amulet:
+            return make_shared<Amulet>(100.0,5.0,"Amulet", 30.0, 150.0);
 
-    case weapons::potion:
-        return  make_shared<Potion>("Potion", 20.0, 0.5);
+        case weapons::potion:
+            return  make_shared<Potion>(50.0,5.0,"Potion", 20.0,150.0);
 
-    default:
-        throw invalid_argument("Invalid weapon type");
-        return nullptr;
-    }
+        default:
+            throw invalid_argument("Invalid weapon type");
+
+        }
+}
     }
 
 shared_ptr<Character> PersonajeFactory::creeatOneArmCharacter(character character, weapons weapon){

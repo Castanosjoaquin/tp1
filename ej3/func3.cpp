@@ -1,4 +1,4 @@
-#include "main.h"
+#include "func3.h"
 #include <iostream>
 
 
@@ -64,7 +64,7 @@ shared_ptr<Character> createCharacter(){
 }}
 
 
-weapons createWeapon(){ 
+weapons createWeapon(){ //corregir 
     int weapon = chooseWeapon();
    while (true){ 
     switch (weapon) {
@@ -127,14 +127,14 @@ void interaction(shared_ptr<Character> player, shared_ptr<Character> enemy){
              playerAttack == quickHit && enemyAttack == defendAndHit || 
              playerAttack == defendAndHit && enemyAttack == strongHit) {
        enemy->takeDamageEj3(10);
-       cout<<"The "<<player->getName() << " use <<"<<player->getPrincipalWeapon() <<" making 10 points of damage" << endl;
+       cout<<"The "<<player->getName() << " use "<<player->getPrincipalWeapon() <<" making 10 points of damage" << endl;
        if(enemy->isAlive() == false) {
             cout << player->getName() << " has won" << endl;
    
         }}  
     else{
         player->takeDamageEj3(10);
-        cout<<"The "<< enemy->getName()  << " use <<"<<enemy->getPrincipalWeapon() <<" making 10 points of damage" << endl;
+        cout<<"The "<< enemy->getName()  << " use "<<enemy->getPrincipalWeapon() <<" making 10 points of damage" << endl;
         if(player->isAlive() == false) {
             cout << enemy->getName() << " has won" << endl;}
 }}
