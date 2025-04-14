@@ -10,4 +10,5 @@ public:
     Potion (float damage, float level, string name, float mana, float healingPower);
     ~Potion();
     void heal(); 
+    void showInfo() override;
 };

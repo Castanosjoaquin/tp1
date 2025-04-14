@@ -11,4 +11,5 @@ public:
     float normalAttack()override; 
     void DoubleAttack();
     void sharp();
+    void showInfo() override;
 };

@@ -22,6 +22,9 @@ public:
     void deleteSecundaryWeapon()override; 
     void takeDamage(float damage)override; 
     void normalAttack(shared_ptr<Character> enemy,int weapon) override; 
-
+    virtual void showInfo() =0; 
+    string getPrincipalWeapon()override;
+    string getSecundaryWeapon()override;
+    void takeDamageEj3(int damage);
 };
 

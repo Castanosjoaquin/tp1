@@ -8,4 +8,5 @@ public:
     SimpleAxe (float damage, float level,float bleeding, string name, float power);
     ~SimpleAxe();
     void powerAttack();
+    void showInfo() override;
 };

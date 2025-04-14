@@ -72,3 +72,20 @@ void Warrior::normalAttack(shared_ptr<Character> enemy,int weapon){
     if(weapon< 0 || weapon>2 || enemy ==nullptr) throw invalid_argument("invalid argument");
     enemy->takeDamage(getStrength(weapon)); 
 }
+
+void Warrior::takeDamageEj3(int damage){ 
+    hp-=damage; 
+    if(hp<0){ 
+        cout<<name<< " died"<<endl; 
+    }
+}
+
+string Warrior::getPrincipalWeapon(){ 
+    if(weapons.first == nullptr) return "No principal weapon"; 
+    return weapons.first->getName(); 
+}
+
+string Warrior::getSecundaryWeapon(){ 
+    if(weapons.second == nullptr) return "No secundary weapon"; 
+    return weapons.second->getName(); 
+}

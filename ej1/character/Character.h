@@ -19,6 +19,9 @@ public:
     virtual void addSecundaryWeapon(shared_ptr<Weapons> weapon)=0; 
     virtual void deleteSecundaryWeapon()=0 ;
     virtual void takeDamage(float damage)=0;
+    virtual void takeDamageEj3(int damage)=0;
+    virtual string getPrincipalWeapon()=0;
+    virtual string getSecundaryWeapon()=0;
     virtual void normalAttack(shared_ptr<Character> enemy, int weapon)=0;
 };
 

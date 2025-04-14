@@ -21,3 +21,11 @@ void DoubleAxe::sharp(){
 float DoubleAxe::normalAttack(){  
     return (damage*level)+sharpness ; 
 }
+
+void DoubleAxe::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"Bleeding posibility "<< bleeding<<endl; 
+    cout<<"Weight"<< sharpness<<endl; 
+}

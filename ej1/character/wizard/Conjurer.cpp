@@ -13,3 +13,11 @@ void Conjurer::magicAttack(shared_ptr<Character> enemy, int weapon){
     enemy->takeDamage(getStrength(weapon)); 
     mana+=10 ; 
 }
+
+void Conjurer::showInfo(){ 
+    cout<<"Name: "<<name<<endl; 
+    cout<<"Hp: "<<hp<<endl; 
+    cout<<"Strength: "<<strength<<endl; 
+    cout<<"Defense: "<<defense<<endl; 
+    cout<<"Mana " <<mana<<endl; 
+}

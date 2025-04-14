@@ -27,8 +27,8 @@ float CombatWeapons::getLevel(){
 }
 
 void CombatWeapons:: bleedingPosibility(){ 
-    std::srand(time(0));
-    float random_number = static_cast<float>(std::rand()) / RAND_MAX;
+    srand(time(0));
+    float random_number = static_cast<float>(rand()) / RAND_MAX;
 
     if(random_number <=bleeding){ 
         cout<<"the "<<getName() <<" caused a bleeding, making 10 of damage per second during 20 seconds"<<endl; 

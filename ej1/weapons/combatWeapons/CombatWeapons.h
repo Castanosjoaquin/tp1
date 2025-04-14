@@ -19,6 +19,7 @@ public:
     float getLevel() override; 
     string getName()override; 
     void bleedingPosibility() ;
+    virtual void showInfo() =0;
 
     
 };

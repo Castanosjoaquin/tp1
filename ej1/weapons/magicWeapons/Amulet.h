@@ -10,7 +10,7 @@ public:
     Amulet(float damage, float level, string name, float mana,float protectionPower);
     ~Amulet()= default;
     void magicProtection(float damage);
-
+    void showInfo() override;
 };
 
 

@@ -17,5 +17,6 @@ public:
      float getLevel() override ; 
      string getName()override  ; 
     float getManaConsume(); 
+    virtual void showInfo() =0;
 };
 

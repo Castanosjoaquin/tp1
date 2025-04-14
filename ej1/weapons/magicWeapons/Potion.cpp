@@ -11,3 +11,11 @@ void Potion::heal(){
     cout<<"The posion transform his damage floato healing power, healing"<< getDamage()/healingPower<< "Hp, consuiming "<<getManaConsume()<< "mana"<<endl;
 }
 
+
+void Potion::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"ManaConsume "<< manaConsume<<endl; 
+    cout<<"Healing power"<< healingPower<<endl; 
+}

@@ -16,3 +16,10 @@ void Sword::swordAttack(){
         charge -=1; 
     bleedingPosibility(); 
 }
+void Sword::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"Bleeding posibility "<< bleeding<<endl; 
+    cout<<"Charge"<< charge <<endl; 
+}

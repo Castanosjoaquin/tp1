@@ -10,3 +10,10 @@ void Necromancer::lifeSteal(shared_ptr<Character> enemy, int weapon ){
     enemy->takeDamage((getStrength(weapon)*vampirism)/100); 
     hp+=getStrength(weapon)*vampirism/100; 
 }
+void Necromancer::showInfo(){ 
+    cout<<"Name: "<<name<<endl; 
+    cout<<"Hp: "<<hp<<endl; 
+    cout<<"Strength: "<<strength<<endl; 
+    cout<<"Defense: "<<defense<<endl; 
+    cout<<"Vampirism: " <<vampirism<<endl; 
+}

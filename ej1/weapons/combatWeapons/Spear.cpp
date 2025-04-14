@@ -9,3 +9,11 @@ void Spear::speedAttack(){
     cout<<"The spear make a really quick attack that gain a lot kinetic energy making "<<normalAttack()*(velocity*velocity)*0.5<< "damage"<<endl; 
     bleedingPosibility();
 }
+void Spear::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"Bleeding posibility "<< bleeding<<endl; 
+    cout<<"Velocity"<< velocity<<endl; 
+}
+

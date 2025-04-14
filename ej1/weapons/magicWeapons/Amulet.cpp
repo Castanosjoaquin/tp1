@@ -13,3 +13,11 @@ void Amulet::magicProtection(float injury ) {
         cout<< "The amulet blocked all the damage: " << injury <<"and consume "<< getManaConsume()<< "mana"<<endl;
     }
 }
+
+void Amulet::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"Mana Consume "<< manaConsume<<endl; 
+    cout<<"Protection  power"<< protectionPower<<endl; 
+}

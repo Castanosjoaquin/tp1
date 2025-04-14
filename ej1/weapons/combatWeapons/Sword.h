@@ -10,6 +10,7 @@ public:
     Sword (float damage, float level,float bleeding, string name);
     ~Sword();
     void swordAttack();
-
+    void showInfo() override;
     
-};
+};   
+

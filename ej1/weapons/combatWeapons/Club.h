@@ -10,6 +10,6 @@ public:
     Club(float damage, float level,float bleeding, string name,float weight);
     ~Club();
     void heavyBlow(); 
-
-
+    void showInfo() override;
 };
+ 

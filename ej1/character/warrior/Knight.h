@@ -9,6 +9,7 @@ public:
     Knight(string name, float hp, float strength ,float defense);
     ~Knight()= default;
     void takeDamage(float damage)override;
-    void angleAttack(shared_ptr<Character> enemy,float weapon =0); 
+    void angleAttack(shared_ptr<Character> enemy,int weapon =0); 
+    void showInfo() override ; 
 };
 

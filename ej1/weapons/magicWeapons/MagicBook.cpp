@@ -12,3 +12,11 @@ void MagicBook::magicAttack(){
     cout<<"The magic book make "<< normalAttack()*magicPower <<"damage and consume "<< getManaConsume()<< "mana"<<endl;
 }
 
+
+void MagicBook::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"ManaConsume "<< manaConsume<<endl; 
+    cout<<"Magic power"<< magicPower<<endl; 
+}

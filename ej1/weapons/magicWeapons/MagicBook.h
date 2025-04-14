@@ -10,6 +10,6 @@ public:
     MagicBook (float damage, float level, string name, float mana,float magicPower);
     ~MagicBook();
     void magicAttack(); 
-
+    void showInfo() override;
 };
 

@@ -9,3 +9,10 @@ void Sorcerer:: magicAttack(shared_ptr<Character> enemy, int weapon){
     if(weapon< 0 || weapon>2 || enemy ==nullptr) throw invalid_argument("invalid argument");
     enemy->takeDamage(getStrength(weapon)*magicPower*0.5); 
 }
+void Sorcerer::showInfo(){ 
+    cout<<"Name: "<<name<<endl; 
+    cout<<"Hp: "<<hp<<endl; 
+    cout<<"Strength: "<<strength<<endl; 
+    cout<<"Defense: "<<defense<<endl; 
+    cout<<"Magic power: " <<magicPower<<endl; 
+}

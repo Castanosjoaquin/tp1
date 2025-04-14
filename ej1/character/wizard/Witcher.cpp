@@ -11,3 +11,11 @@ void Witcher::takeDamage(float damage){
         cout<<name<< " died"<<endl;
 }
 }
+
+void Witcher::showInfo(){ 
+    cout<<"Name: "<<name<<endl; 
+    cout<<"Hp: "<<hp<<endl; 
+    cout<<"Strength: "<<strength<<endl; 
+    cout<<"Defense: "<<defense<<endl; 
+    cout<<"Magic protection: " <<magicProtection<<endl; 
+}

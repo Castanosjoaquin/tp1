@@ -7,6 +7,7 @@ private:
 public:
     Witcher(string name, float hp, float strength ,float defense, float magicProtection);
     ~Witcher() = default;
-    void takeDamage(float damage);
+    void takeDamage(float damage) override;
+    void showInfo() override ; 
 };
 

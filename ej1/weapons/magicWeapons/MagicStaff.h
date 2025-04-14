@@ -10,4 +10,5 @@ public:
     MagicStaff (float damage, float level, string name, float mana, float age);
     ~MagicStaff();
     void ancientAttack(); 
+    void showInfo() override;
 };

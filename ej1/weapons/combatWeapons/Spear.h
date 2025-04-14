@@ -9,4 +9,6 @@ public:
     Spear(float damage, float level,float bleeding, string name, float velocity);
     ~Spear();
     void speedAttack(); 
+    void showInfo() override;
+    
 };   

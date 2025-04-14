@@ -30,13 +30,15 @@
 
 
 
-enum weapons{Club, DoubleAxe, SimpleAxe, Spear, Sword, MagicStaff, MagicBook,Amulet, Potion}; 
-enum character{Paladin, Mercenary, Knight, Gladiator, Barbarian, Conjurer, Necromancer,Sorcerer,Witcher}; 
+enum weapons{club, doubleAxe, simpleAxe, spear, sword, magicStaff, magicBook,amulet, potion}; 
+enum character{paladin, mercenary, knight, gladiator, barbarian, conjurer,necromancer,sorcerer,witcher}; 
 
 class PersonajeFactory{
     public:
-    static shared_ptr<Character> creeatCharacter(character character); 
-    static shared_ptr<Character> creeatWeapon(weapons weapon); 
-    static shared_ptr<Character> creeatCharacter(character character, weapons weapon); 
+    static shared_ptr<Character> creeatCharacter(character type); 
+    static shared_ptr<Weapons> creatWeapon(weapons weapon); 
+    static shared_ptr<Character> creeatOneArmCharacter(character character, weapons weapon); 
+    static shared_ptr<Character> creeatFullCharacter(character character, weapons weapon1, weapons weapon2); 
+
 };
 

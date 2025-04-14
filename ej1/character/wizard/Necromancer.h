@@ -9,5 +9,6 @@ public:
     Necromancer(string name, float hp, float strength ,float defense, float vampirism);
     ~Necromancer() = default; 
     void lifeSteal(shared_ptr<Character> enemy, int weapon =0); 
+    void showInfo() override ; 
 
 };

@@ -10,3 +10,11 @@ MagicStaff::~MagicStaff(){ }
 void MagicStaff::ancientAttack(){ 
 cout<<"The magic staff of "<< age<<"years old make "<< normalAttack()*(age/10)<<"and consume "<< getManaConsume()<< "of mana"<<endl; 
 }
+
+void MagicStaff::showInfo(){ 
+    cout<<"Damage: "<< damage<<endl;
+    cout<<"Level: "<< level<<endl; 
+    cout<<"Name: "<< name<<endl; 
+    cout<<"ManaConsume "<< manaConsume<<endl; 
+    cout<<"Age"<< age<<endl; 
+}

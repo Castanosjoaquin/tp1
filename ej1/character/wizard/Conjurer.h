@@ -8,5 +8,6 @@ public:
     Conjurer(string name, float hp, float strength ,float defense);
     ~Conjurer() = default;
     void magicAttack(shared_ptr<Character> enemy, int weapeon);
-
+    void showInfo() override ; 
+    
 };

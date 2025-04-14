@@ -8,5 +8,6 @@ public:
     Paladin(string name, float hp, float strength ,float defense, float ProtectionPlus);
     ~Paladin() = default;
     void takeDamage(float damage)override; 
+    void showInfo() override ; 
 };
 

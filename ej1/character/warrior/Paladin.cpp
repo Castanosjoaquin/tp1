@@ -12,3 +12,11 @@ void Paladin::takeDamage(float damage){
         cout<<name<< " died"<<endl; 
     }
 }
+
+void Paladin::showInfo(){ 
+    cout<<"Name: "<<name<<endl; 
+    cout<<"Hp: "<<hp<<endl; 
+    cout<<"Strength: "<<strength<<endl; 
+    cout<<"Defense: "<<defense<<endl; 
+    cout<<"Protection plus: " <<ProtectionPlus<<endl; 
+}
