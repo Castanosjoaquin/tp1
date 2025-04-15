@@ -80,7 +80,7 @@ void Warrior::normalAttack(shared_ptr<Character> enemy,int weapon){
 
 void Warrior::takeDamageEj3(int damage){ 
     hp-=damage; 
-    if(hp<0){ 
+    if(hp<=0){ 
         cout<<name<< " died"<<endl; 
     }
 }

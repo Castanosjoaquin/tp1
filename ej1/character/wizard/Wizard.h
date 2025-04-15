@@ -25,6 +25,6 @@ public:
     virtual void showInfo() =0; 
     string getPrincipalWeapon()override;
     string getSecundaryWeapon()override;
-    void takeDamageEj3(int damage);
+    void takeDamageEj3(int damage) override;
 };
 

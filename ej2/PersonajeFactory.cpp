@@ -34,6 +34,7 @@ shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){
     while(true){    
         switch (weapon){    
         case weapons::club:
+
             return make_shared<Club>(100.0,5.0,0.7,"Club",30.0); 
 
         case weapons::doubleAxe:
@@ -46,8 +47,7 @@ shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){
             return make_shared<Spear>(30.0,5.0,0.7,"Spear", 15.0);               
 
         case weapons::sword:
-        return make_shared<Sword>(80.0,5.0,0.7,"Sword");
-    
+            return make_shared<Sword>(80.0,5.0,0.7,"Sword");
         case weapons::magicStaff:
             return make_shared<MagicStaff>(100.0,5.0,"MagicStaff", 50.0,500.0);
         

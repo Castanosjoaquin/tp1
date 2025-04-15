@@ -1,7 +1,9 @@
 #include "Spear.h"
 
 Spear:: Spear(float damage, float level,float bleeding, string name, float velocity)
-    :CombatWeapons(damage, level, bleeding, name), velocity{velocity}{}
+    :CombatWeapons(damage, level, bleeding, name), velocity{velocity}{
+        if(velocity<=0) throw invalid_argument("Velocity must be greater than 0");
+    }
 
 Spear::~Spear(){}
 

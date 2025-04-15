@@ -4,7 +4,8 @@
         "ostream": "cpp",
         "string": "cpp",
         "iostream": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "stdexcept": "cpp"
     },
     "github.copilot.enable": {
         "*": true,
