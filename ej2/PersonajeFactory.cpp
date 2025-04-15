@@ -30,8 +30,7 @@ shared_ptr<Character> PersonajeFactory::creeatCharacter(character type){
     }         
 }
 
-shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){ 
-    while(true){    
+shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){  
         switch (weapon){    
         case weapons::club:
 
@@ -64,7 +63,6 @@ shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){
             throw invalid_argument("Invalid weapon type");
 
         }
-}
     }
 
 shared_ptr<Character> PersonajeFactory::creeatOneArmCharacter(character character, weapons weapon){
