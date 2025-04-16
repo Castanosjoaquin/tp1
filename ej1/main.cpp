@@ -29,8 +29,8 @@
 #include "character/warrior/Barbarian.h" 
 
 int main(){ 
-    //testing the classes
-    // create characters
+    //testing de clases
+    //creo los personajes
     shared_ptr<Paladin> paladin = make_shared<Paladin>("Paladin", 100.0, 100.0, 50.0, 50.0);
     shared_ptr<Mercenary> mercenary = make_shared<Mercenary>("Mercenary", 100.0, 100.0, 20.0, 0.5);
     shared_ptr<Knight> knight = make_shared<Knight>("Knight", 100.0, 80.0, 70.0);
@@ -41,7 +41,7 @@ int main(){
     shared_ptr<Sorcerer> sorcerer = make_shared<Sorcerer>("Sorcerer", 100.0, 90.0, 25.0, 40.0);
     shared_ptr<Witcher> witcher = make_shared<Witcher>("Witcher", 100.0, 100.0, 30.0, 50.0);
 
-    // create weapons
+    // creo las armas
     unique_ptr<Club> club = make_unique<Club>(100.0, 5.0, 0.7, "Club", 30.0); 
     unique_ptr<DoubleAxe> doubleAxe = make_unique<DoubleAxe>(100.0, 5.0, 0.7, "DoubleAxe");
     unique_ptr<SimpleAxe> simpleAxe = make_unique<SimpleAxe>(150.0, 5.0, 0.7, "SimpleAxe", 25.0);
@@ -53,7 +53,7 @@ int main(){
     unique_ptr<Potion> potion = make_unique<Potion>(50.0, 5.0, "Potion", 20.0, 150.0);
 
 
-// Assign weapons to characters
+// añado las armas a los personajes
     witcher->addPrincipalWeapon(move(magicStaff));
     paladin->addPrincipalWeapon(move(sword));
     mercenary->addPrincipalWeapon(move(doubleAxe));
@@ -64,7 +64,7 @@ int main(){
     necromancer->addPrincipalWeapon(move(amulet));
     sorcerer->addPrincipalWeapon(move(potion));
 
-    // Show character info
+    // muestro la info de los personajes
     witcher->showInfo();
     paladin->showInfo();
     mercenary->showInfo();

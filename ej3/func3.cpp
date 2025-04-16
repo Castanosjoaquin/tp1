@@ -64,7 +64,7 @@ shared_ptr<Character> createCharacter(){
 }}
 
 
-weapons createWeapon(){ //corregir 
+weapons createWeapon(){ 
     int weapon = chooseWeapon();
    while (true){ 
     switch (weapon) {
@@ -103,7 +103,7 @@ int selectAttack(){
     return attack;
 }
 
-attacks selectAttackType(int attack){ //esta funcion es para que sea mas legible
+attacks selectAttackType(int attack){ //esta funcion es para que sea mas legibles los casos al coparar los ataques
    while(true){
         switch (attack) {
         case strongHit:
@@ -123,18 +123,18 @@ void interaction(shared_ptr<Character> player, shared_ptr<Character> enemy){
     attacks playerAttack =  selectAttackType(selectAttack());
     attacks enemyAttack = selectAttackType(randomNumber(1, 3));
     if(playerAttack == enemyAttack) cout << "Both players used the same hit" << endl;
-    else if (playerAttack == strongHit && enemyAttack == quickHit || 
+    else if (playerAttack == strongHit && enemyAttack == quickHit || // se cheque los casos de ganar
              playerAttack == quickHit && enemyAttack == defendAndHit || 
              playerAttack == defendAndHit && enemyAttack == strongHit) {
        enemy->takeDamageEj3(10);
-       cout<<"The "<<player->getName() << " use "<<player->getPrincipalWeapon() <<" making 10 points of damage" << endl;
+       cout<<"The "<<player->getName() << "(player) use "<<player->getPrincipalWeapon() <<" making 10 points of damage" << endl;
        if(enemy->isAlive() == false) {
             cout << player->getName() << " has won" << endl;
    
         }}  
     else{
         player->takeDamageEj3(10);
-        cout<<"The "<< enemy->getName()  << " use "<<enemy->getPrincipalWeapon() <<" making 10 points of damage" << endl;
+        cout<<"The "<< enemy->getName()  << "(enemy) use "<<enemy->getPrincipalWeapon() <<" making 10 points of damage" << endl;
         if(player->isAlive() == false) {
             cout << enemy->getName() << " has won" << endl;}
 }}

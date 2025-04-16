@@ -1,11 +1,11 @@
 #include "func2.h"
 
 int randomNumber(int min, int max){ 
-    return min + rand() % (max - min + 1);
+    return min + rand() % (max - min + 1);//con el % se acota el rango y sumando el minimo se asegura que el valor no sea menor al mínimo
 }
 
 shared_ptr<Character> randomCharacter(int numbWeapons){ 
-    int randomCharac = randomNumber(paladin, witcher);
+    int randomCharac = randomNumber(paladin, witcher); //se elege un numero aleatorio entre el rango de los personajes
     int randomWeapon = randomNumber(club, potion);
     character charac = static_cast<character>(randomCharac);  
     weapons weapon = static_cast<weapons>(randomWeapon);
@@ -31,8 +31,8 @@ shared_ptr<Character> randomCharacter(int numbWeapons){
 shared_ptr<Character> randomWizard(int numbWeapons){ 
     int randomCharac = randomNumber(conjurer, witcher);
     int randomWeapon = randomNumber(club, potion);
-    character charac = static_cast<character>(randomCharac);  //explicar en el informe
-    weapons weapon = static_cast<weapons>(randomWeapon); 
+    character charac = static_cast<character>(randomCharac);  //se castea el randomCharac a character debido a que se pide ese tipo de dato en las  funciones
+    weapons weapon = static_cast<weapons>(randomWeapon); //se castea el randomCharac a weapon debido a que se pide ese tipo de dato en las  funciones
     while (true){
         switch (numbWeapons){
         case 0:

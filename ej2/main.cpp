@@ -4,6 +4,7 @@ int main(){
     int warriorNumber= randomNumber(3,7); 
     int wizardNumber = randomNumber(3,7); 
     vector<shared_ptr<Character>> players;
+    
     int weaponNumber;
     try{for(int i=0; i<warriorNumber; i++){
         weaponNumber = randomNumber(0,2);
