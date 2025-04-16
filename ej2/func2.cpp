@@ -26,10 +26,7 @@ shared_ptr<Character> randomCharacter(int numbWeapons){
 }
 
 shared_ptr<Character> randomWizard(int numbWeapons){ 
-    int min = conjurer;
-    int max = witcher;  
-    int randomIndex = min + (std::rand() % (max - min + 1)); 
-
+    int randomIndex = randomNumber(conjurer, witcher);
     character charac = static_cast<character>(randomIndex);  //explicar en el informe
 ;
     weapons weapon = static_cast<weapons>(1+rand()%potion); 
@@ -53,9 +50,7 @@ shared_ptr<Character> randomWizard(int numbWeapons){
 }
 
 shared_ptr<Character> randomWarrior(int numbWeapons){ 
-    int min = paladin;
-    int max = barbarian;
-    int randomIndex = min + (std::rand() % (max - min + 1)); 
+    int randomIndex = randomNumber(paladin, barbarian); 
     character charac = static_cast<character>(randomIndex); 
     weapons weapon = static_cast<weapons>(1+rand()%potion); 
     while (true){
