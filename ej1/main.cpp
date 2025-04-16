@@ -42,27 +42,27 @@ int main(){
     shared_ptr<Witcher> witcher = make_shared<Witcher>("Witcher", 100.0, 100.0, 30.0, 50.0);
 
     // create weapons
-    shared_ptr<Club> club = make_shared<Club>(100.0, 5.0, 0.7, "Club", 30.0); 
-    shared_ptr<DoubleAxe> doubleAxe = make_shared<DoubleAxe>(100.0, 5.0, 0.7, "DoubleAxe");
-    shared_ptr<SimpleAxe> simpleAxe = make_shared<SimpleAxe>(150.0, 5.0, 0.7, "SimpleAxe", 25.0);
-    shared_ptr<Spear> spear = make_shared<Spear>(30.0, 5.0, 0.7, "Spear", 15.0);               
-    shared_ptr<Sword> sword = make_shared<Sword>(80.0, 5.0, 0.7, "Sword");
-    shared_ptr<MagicStaff> magicStaff = make_shared<MagicStaff>(100.0, 5.0, "MagicStaff", 50.0, 500.0);
-    shared_ptr<MagicBook> magicBook = make_shared<MagicBook>(50.0, 5.0, "MagicBook", 40.0, 80.0);
-    shared_ptr<Amulet> amulet = make_shared<Amulet>(100.0, 5.0, "Amulet", 30.0, 150.0);
-    shared_ptr<Potion> potion = make_shared<Potion>(50.0, 5.0, "Potion", 20.0, 150.0);
+    unique_ptr<Club> club = make_unique<Club>(100.0, 5.0, 0.7, "Club", 30.0); 
+    unique_ptr<DoubleAxe> doubleAxe = make_unique<DoubleAxe>(100.0, 5.0, 0.7, "DoubleAxe");
+    unique_ptr<SimpleAxe> simpleAxe = make_unique<SimpleAxe>(150.0, 5.0, 0.7, "SimpleAxe", 25.0);
+    unique_ptr<Spear> spear = make_unique<Spear>(30.0, 5.0, 0.7, "Spear", 15.0);               
+    unique_ptr<Sword> sword = make_unique<Sword>(80.0, 5.0, 0.7, "Sword");
+    unique_ptr<MagicStaff> magicStaff = make_unique<MagicStaff>(100.0, 5.0, "MagicStaff", 50.0, 500.0);
+    unique_ptr<MagicBook> magicBook = make_unique<MagicBook>(50.0, 5.0, "MagicBook", 40.0, 80.0);
+    unique_ptr<Amulet> amulet = make_unique<Amulet>(100.0, 5.0, "Amulet", 30.0, 150.0);
+    unique_ptr<Potion> potion = make_unique<Potion>(50.0, 5.0, "Potion", 20.0, 150.0);
 
 
 // Assign weapons to characters
-    witcher->addPrincipalWeapon(magicStaff);
-    paladin->addPrincipalWeapon(sword);
-    mercenary->addPrincipalWeapon(doubleAxe);
-    knight->addPrincipalWeapon(spear);
-    gladiator->addPrincipalWeapon(simpleAxe);
-    barbarian->addPrincipalWeapon(club);
-    conjurer->addPrincipalWeapon(magicBook);
-    necromancer->addPrincipalWeapon(amulet);
-    sorcerer->addPrincipalWeapon(potion);
+    witcher->addPrincipalWeapon(move(magicStaff));
+    paladin->addPrincipalWeapon(move(sword));
+    mercenary->addPrincipalWeapon(move(doubleAxe));
+    knight->addPrincipalWeapon(move(spear));
+    gladiator->addPrincipalWeapon(move(simpleAxe));
+    barbarian->addPrincipalWeapon(move(club));
+    conjurer->addPrincipalWeapon(move(magicBook));
+    necromancer->addPrincipalWeapon(move(amulet));
+    sorcerer->addPrincipalWeapon(move(potion));
 
     // Show character info
     witcher->showInfo();

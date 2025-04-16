@@ -30,34 +30,34 @@ shared_ptr<Character> PersonajeFactory::creeatCharacter(character type){
     }         
 }
 
-shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){  
+unique_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){  
         switch (weapon){    
         case weapons::club:
 
-            return make_shared<Club>(100.0,5.0,0.7,"Club",30.0); 
+            return make_unique<Club>(100.0,5.0,0.7,"Club",30.0); 
 
         case weapons::doubleAxe:
-            return make_shared<DoubleAxe>(100.0,5.0,0.7,"DoubleAxe");
+            return make_unique<DoubleAxe>(100.0,5.0,0.7,"DoubleAxe");
 
         case weapons::simpleAxe:
-            return make_shared<SimpleAxe>(150.0,5.0,0.7,"SimpleAxe", 25.0);
+            return make_unique<SimpleAxe>(150.0,5.0,0.7,"SimpleAxe", 25.0);
         
         case weapons::spear:
-            return make_shared<Spear>(30.0,5.0,0.7,"Spear", 15.0);               
+            return make_unique<Spear>(30.0,5.0,0.7,"Spear", 15.0);               
 
         case weapons::sword:
-            return make_shared<Sword>(80.0,5.0,0.7,"Sword");
+            return make_unique<Sword>(80.0,5.0,0.7,"Sword");
         case weapons::magicStaff:
-            return make_shared<MagicStaff>(100.0,5.0,"MagicStaff", 50.0,500.0);
+            return make_unique<MagicStaff>(100.0,5.0,"MagicStaff", 50.0,500.0);
         
         case weapons::magicBook:
-            return make_shared<MagicBook>(50.0,5.0,"MagicBook", 40.0, 80.0);
+            return make_unique<MagicBook>(50.0,5.0,"MagicBook", 40.0, 80.0);
     
         case weapons::amulet:
-            return make_shared<Amulet>(100.0,5.0,"Amulet", 30.0, 150.0);
+            return make_unique<Amulet>(100.0,5.0,"Amulet", 30.0, 150.0);
 
         case weapons::potion:
-            return  make_shared<Potion>(50.0,5.0,"Potion", 20.0,150.0);
+            return  make_unique<Potion>(50.0,5.0,"Potion", 20.0,150.0);
 
         default:
             throw invalid_argument("Invalid weapon type");
@@ -67,16 +67,16 @@ shared_ptr<Weapons> PersonajeFactory::creatWeapon(weapons weapon){
 
 shared_ptr<Character> PersonajeFactory::creeatOneArmCharacter(character character, weapons weapon){
     shared_ptr<Character> newCharacter = creeatCharacter(character);
-    shared_ptr<Weapons> newWeapon = creatWeapon(weapon);
-    newCharacter->addPrincipalWeapon(newWeapon);
+    unique_ptr<Weapons> newWeapon = creatWeapon(weapon);
+    newCharacter->addPrincipalWeapon(move(newWeapon));
     return newCharacter;
 }
 
 shared_ptr<Character> PersonajeFactory::creeatFullCharacter(character character,weapons weapon1, weapons weapon2){
     shared_ptr<Character> newCharacter = creeatCharacter(character);
-    shared_ptr<Weapons> newWeapon1 = creatWeapon(weapon1);
-    shared_ptr<Weapons> newWeapon2 = creatWeapon(weapon2);
-    newCharacter->addPrincipalWeapon(newWeapon1);
-    newCharacter->addSecundaryWeapon(newWeapon2);
+    unique_ptr<Weapons> newWeapon1 = creatWeapon(weapon1);
+    unique_ptr<Weapons> newWeapon2 = creatWeapon(weapon2);
+    newCharacter->addPrincipalWeapon(move(newWeapon1));
+    newCharacter->addSecundaryWeapon(move(newWeapon2));
     return newCharacter;
 }

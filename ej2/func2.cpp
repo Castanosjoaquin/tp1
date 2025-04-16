@@ -30,7 +30,7 @@ shared_ptr<Character> randomWizard(int numbWeapons){
     int max = witcher;  
     int randomIndex = min + (std::rand() % (max - min + 1)); 
 
-    character charac = static_cast<character>(randomIndex);  //,explicar en el informe
+    character charac = static_cast<character>(randomIndex);  //explicar en el informe
 ;
     weapons weapon = static_cast<weapons>(1+rand()%potion); 
     while (true){

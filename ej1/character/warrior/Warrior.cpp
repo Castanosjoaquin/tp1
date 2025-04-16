@@ -33,7 +33,7 @@ bool Warrior::isAlive(){
     return hp>0; 
 }
 
-void Warrior::addPrincipalWeapon(shared_ptr<Weapons> weapon){ 
+void Warrior::addPrincipalWeapon(unique_ptr<Weapons> weapon){ 
     if(weapon == nullptr){ 
         cout<<"You not pass correct weapon"<<endl; 
         return; 
@@ -42,10 +42,10 @@ void Warrior::addPrincipalWeapon(shared_ptr<Weapons> weapon){
         cout<<name<<"has already a principal weapon"<<endl;
         return;
     }
-    weapons.first = weapon; 
+    weapons.first = move(weapon); 
 }
 
-void Warrior::addSecundaryWeapon(shared_ptr<Weapons> weapon){ 
+void Warrior::addSecundaryWeapon(unique_ptr<Weapons> weapon){ 
     if(weapon == nullptr){ 
         cout<<"You not pass correct weapon"<<endl; 
         return; 
@@ -54,7 +54,7 @@ void Warrior::addSecundaryWeapon(shared_ptr<Weapons> weapon){
         cout<<name<<"has already a secundary weapon"<<endl;
         return;
     }
-    weapons.second = weapon; 
+    weapons.second = move(weapon); 
 }
 
 void Warrior::deletePrincipalWeapon(){ 

@@ -35,7 +35,7 @@ enum character{paladin=1, mercenary, knight, gladiator, barbarian, conjurer,necr
 class PersonajeFactory{
     public:
     static shared_ptr<Character> creeatCharacter(character type); 
-    static shared_ptr<Weapons> creatWeapon(weapons weapon); 
+    static unique_ptr<Weapons> creatWeapon(weapons weapon); 
     static shared_ptr<Character> creeatOneArmCharacter(character character, weapons weapon); 
     static shared_ptr<Character> creeatFullCharacter(character character, weapons weapon1, weapons weapon2); 
 

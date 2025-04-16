@@ -31,7 +31,7 @@ bool Wizard::isAlive(){
     return hp>0; 
 }
 
-void Wizard::addPrincipalWeapon(shared_ptr<Weapons> weapon){ 
+void Wizard::addPrincipalWeapon(unique_ptr<Weapons> weapon){ 
     if(weapon == nullptr){ 
         cout<<"You not pass correct weapon"<<endl; 
         return; 
@@ -40,10 +40,10 @@ void Wizard::addPrincipalWeapon(shared_ptr<Weapons> weapon){
         cout<<name<<"has already a principal weapon"<<endl;
         return;
     }
-    weapons.first = weapon; 
+    weapons.first = move(weapon);   
 }
 
-void Wizard::addSecundaryWeapon(shared_ptr<Weapons> weapon){ 
+void Wizard::addSecundaryWeapon(unique_ptr<Weapons> weapon){ 
     if(weapon == nullptr){ 
         cout<<"You not pass correct weapon"<<endl; 
         return; 
@@ -52,7 +52,7 @@ void Wizard::addSecundaryWeapon(shared_ptr<Weapons> weapon){
         cout<<name<<"has already a secundary weapon"<<endl;
         return;
     }
-    weapons.second = weapon; 
+    weapons.second = move( weapon); 
 }
 
 void Wizard::deletePrincipalWeapon(){ 
