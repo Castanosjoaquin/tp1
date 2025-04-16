@@ -5,8 +5,10 @@ int randomNumber(int min, int max){
 }
 
 shared_ptr<Character> randomCharacter(int numbWeapons){ 
-    character charac = static_cast<character>(rand()%witcher);  //explicar en el informe
-    weapons weapon = static_cast<weapons>(rand()%potion);   
+    int randomCharac = randomNumber(paladin, witcher);
+    int randomWeapon = randomNumber(club, potion);
+    character charac = static_cast<character>(randomCharac);  
+    weapons weapon = static_cast<weapons>(randomWeapon);
     while(true){
         switch (numbWeapons){
         case 0:
@@ -14,7 +16,8 @@ shared_ptr<Character> randomCharacter(int numbWeapons){
         case 1:
             return PersonajeFactory::creeatOneArmCharacter(charac, weapon); 
         case 2:{
-            weapons weapon2 = static_cast<weapons>(rand()%potion); 
+            int randomWeapon2 = randomNumber(club, potion);
+            weapons weapon2 = static_cast<weapons>(randomWeapon2); 
             return PersonajeFactory::creeatFullCharacter(charac, weapon, weapon2); } 
         default:
             cout<<"Invalid amount of weapons"; 
@@ -26,10 +29,10 @@ shared_ptr<Character> randomCharacter(int numbWeapons){
 }
 
 shared_ptr<Character> randomWizard(int numbWeapons){ 
-    int randomIndex = randomNumber(conjurer, witcher);
-    character charac = static_cast<character>(randomIndex);  //explicar en el informe
-;
-    weapons weapon = static_cast<weapons>(1+rand()%potion); 
+    int randomCharac = randomNumber(conjurer, witcher);
+    int randomWeapon = randomNumber(club, potion);
+    character charac = static_cast<character>(randomCharac);  //explicar en el informe
+    weapons weapon = static_cast<weapons>(randomWeapon); 
     while (true){
         switch (numbWeapons){
         case 0:
@@ -37,7 +40,8 @@ shared_ptr<Character> randomWizard(int numbWeapons){
         case 1:
             return PersonajeFactory::creeatOneArmCharacter(charac, weapon); 
         case 2:{
-            weapons weapon2 = static_cast<weapons>(1+rand()%potion); 
+            int randomWeapon2 = randomNumber(club, potion);
+            weapons weapon2 = static_cast<weapons>(randomWeapon2); 
             return PersonajeFactory::creeatFullCharacter(charac, weapon, weapon2); 
         }
         default:
@@ -50,9 +54,10 @@ shared_ptr<Character> randomWizard(int numbWeapons){
 }
 
 shared_ptr<Character> randomWarrior(int numbWeapons){ 
-    int randomIndex = randomNumber(paladin, barbarian); 
-    character charac = static_cast<character>(randomIndex); 
-    weapons weapon = static_cast<weapons>(1+rand()%potion); 
+    int randomCharac = randomNumber(paladin, barbarian); 
+    int randomWeapon = randomNumber(club, potion);
+    character charac = static_cast<character>(randomCharac); 
+    weapons weapon = static_cast<weapons>(randomWeapon); 
     while (true){
         switch (numbWeapons) {
         case 0:
@@ -60,7 +65,8 @@ shared_ptr<Character> randomWarrior(int numbWeapons){
         case 1:
             return PersonajeFactory::creeatOneArmCharacter(charac, weapon); 
         case 2:{
-            weapons weapon2 = static_cast<weapons>(1+rand()%potion); 
+            int randomWeapon2 = randomNumber(club, potion);
+            weapons weapon2 = static_cast<weapons>(randomWeapon2); 
             return PersonajeFactory::creeatFullCharacter(charac, weapon, weapon2); 
         }
         default:
