@@ -8,9 +8,10 @@
         "stdexcept": "cpp"
     },
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "cmake.sourceDirectory": "/home/castanosjoaquin/paradigmas/tps/tp1/ej1"
 }
